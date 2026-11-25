@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={`Contact | ${site.brand}`} description={`Contact ${site.brand} by phone or email.`}>
+  <section>
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h1>Get in touch directly.</h1>
+      <p class="lead">Call or email us directly — or connect this page to Formspree, Basin, or a Cloudflare Turnstile Worker endpoint.</p>
+      <div class="grid">
+        <article class="card">
+          <h2>Phone</h2>
+          <p><a class="btn" href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+          <p>{site.hours}</p>
+        </article>
+        <article class="card">
+          <h2>Email</h2>
+          <p><a class="btn" href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p>Serving {site.area}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

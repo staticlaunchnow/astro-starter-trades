@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={`Page Not Found | ${site.brand}`} description="Page not found.">
+  <section>
+    <div class="wrap">
+      <p class="kicker">404</p>
+      <h1>Page not found.</h1>
+      <p class="lead">Return to the homepage to find what you need.</p>
+      <div class="actions"><a class="btn" href="/">Back to Home</a></div>
+    </div>
+  </section>
+</BaseLayout>

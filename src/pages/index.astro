@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={`${site.brand} — ${site.area}`} description={site.heroLead}>
+  <section>
+    <div class="wrap">
+      <p class="kicker">{site.kicker}</p>
+      <h1>{site.heroTitle}</h1>
+      <p class="lead">{site.heroLead}</p>
+      <div class="actions">
+        <a class="btn" href={`tel:${site.phoneHref}`}>Call {site.phone}</a>
+        <a class="btn-outline" href="/contact/">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="kicker">{site.secondaryLabel}</p>
+      <h2>{site.secondaryHeading}</h2>
+      <div class="grid">
+        {site.offerings.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <p class="price">{item.price}</p>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href={`/${site.secondarySlug}/`}>View full details →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

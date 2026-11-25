@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={`${site.secondaryLabel} | ${site.brand}`} description={site.heroLead}>
+  <section>
+    <div class="wrap">
+      <p class="kicker">{site.secondaryLabel}</p>
+      <h1>{site.secondaryHeading}</h1>
+      <p class="lead">Transparent scope and straightforward pricing — serving {site.area}.</p>
+      <div class="grid">
+        {site.offerings.map((item) => (
+          <article class="card">
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <p class="price">{item.price}</p>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="btn" href="/contact/">Get Started →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

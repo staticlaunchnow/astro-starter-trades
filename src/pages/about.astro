@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={`About | ${site.brand}`} description={site.aboutBody}>
+  <section>
+    <div class="wrap">
+      <p class="kicker">About Us</p>
+      <h1>{site.aboutTitle}</h1>
+      <p class="lead">{site.aboutBody}</p>
+      <div class="card" style="margin-top:24px;">
+        <h2>Service Area &amp; Hours</h2>
+        <p><strong>Location:</strong> {site.area}</p>
+        <p><strong>Hours:</strong> {site.hours}</p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Contact Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
